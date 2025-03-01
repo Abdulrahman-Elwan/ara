@@ -533,7 +533,7 @@ function createItems(data, containerId, type) {
   container.innerHTML = '';
   const fragment = document.createDocumentFragment();
   const currentLang = localStorage.getItem('selectedLanguage');
-  const lang = currentLang === 'ar' ? 'ar' : 'en';
+  const lang = currentLang === 'en' ? 'en' : 'ar';
 
   data.forEach(item => {
     const col = document.createElement("div");

@@ -10,55 +10,6 @@ document.addEventListener("scroll", function () {
 });
 
 
-
-
-// Newsletter Subscription
-
-(function () {
-  emailjs.init('3gUIxBk1fE5bV8sNQ'); // Replace 'YOUR_USER_ID' with your EmailJS User ID
-})();
-
-// Form submission handler
-document.getElementById('subscribeForm').addEventListener('submit', function (e) {
-  e.preventDefault();
-
-  const emailInput = document.getElementById('emailInput');
-  const emailError = document.getElementById('emailError');
-  const emailSuccess = document.getElementById('emailSuccess');
-  const email = emailInput.value.trim();
-
-  // Email validation
-  if (!validateEmail(email)) {
-    emailError.textContent = 'Please enter a valid email address.';
-    return;
-  }
-
-  emailError.textContent = ''; // Clear error message
-
-  // Prepare email parameters
-  const templateParams = {
-    subscriber_email: email, // Match this with your EmailJS template
-  };
-
-  console.log('Email being sent:', email); // Debugging log
-
-  // Send email using EmailJS
-  emailjs
-    .send('service_k0a6oqv', 'template_yge24ol', templateParams)
-    .then(
-      function (response) {
-        console.log('SUCCESS!', response.status, response.text);
-        alert("Thank you for subscribing! We have received your email.");
-        emailInput.value = ''; // Clear input field
-      },
-      function (error) {
-        console.error('FAILED...', error);
-        emailError.textContent = 'Failed to subscribe. Please try again later.';
-      }
-    );
-});
-
-
 // Email validation function
 function validateEmail(email) {
   const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;

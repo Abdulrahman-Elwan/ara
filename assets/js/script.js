@@ -370,7 +370,7 @@ function applyFont(language) {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  let savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+  let savedLanguage = localStorage.getItem('selectedLanguage') || (navigator.language.startsWith('en') ? 'ar' : 'en');
   document.getElementById('languageSelector').value = savedLanguage;
   applyTranslations(savedLanguage);
   applyFont(savedLanguage);
@@ -533,7 +533,7 @@ function createItems(data, containerId, type) {
   container.innerHTML = '';
   const fragment = document.createDocumentFragment();
   const currentLang = localStorage.getItem('selectedLanguage');
-  const lang = 'ar';
+  const lang = currentLang === 'ar' ? 'ar' : 'en';
 
   data.forEach(item => {
     const col = document.createElement("div");

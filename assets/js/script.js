@@ -370,7 +370,7 @@ function applyFont(language) {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  let savedLanguage = localStorage.getItem('selectedLanguage') || 'ar';
+  let savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
   document.getElementById('languageSelector').value = savedLanguage;
   applyTranslations(savedLanguage);
   applyFont(savedLanguage);
@@ -430,9 +430,9 @@ const processItems = [
       ar: "خالية من المواد الكيميائية"
     },
     title: {
-      en: "Chemical Free",
-      ar: "خالية من المواد الكيميائية"
-    },
+      en: "Pure & Safe Ingredients",
+      ar: "مكونات نقية وآمنة"
+    }
     description: {
       en: "Advanced formulas free from harmful chemicals for a safer choice",
       ar: "تركيبات متقدمة خالية من المواد الضارة لخيار أكثر أمانًا"
@@ -533,7 +533,7 @@ function createItems(data, containerId, type) {
   container.innerHTML = '';
   const fragment = document.createDocumentFragment();
   const currentLang = localStorage.getItem('selectedLanguage');
-  const lang = currentLang === 'en' ? 'en' : 'ar';
+  const lang = 'ar';
 
   data.forEach(item => {
     const col = document.createElement("div");

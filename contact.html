@@ -338,33 +338,33 @@
             return isValid;
         }
 
-        // Function to send data using EmailJS
-        // function sendMail() {
-        //     // Initialize EmailJS
-        //     emailjs.init("3gUIxBk1fE5bV8sNQ"); // Replace "YOUR_PUBLIC_KEY" with your actual EmailJS public key
+        Function to send data using EmailJS
+        function sendMail() {
+            // Initialize EmailJS
+            emailjs.init("3gUIxBk1fE5bV8sNQ"); // Replace "YOUR_PUBLIC_KEY" with your actual EmailJS public key
 
-        //     const params = {
-        //         firstName: document.getElementById('firstName').value,
-        //         lastName: document.getElementById('lastName').value,
-        //         email: document.getElementById('email').value,
-        //         phoneNumber: document.getElementById('phoneNumber').value,
-        //         subject: document.getElementById('subject').value,
-        //         message: document.getElementById('message').value,
-        //     };
+            const params = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                phoneNumber: document.getElementById('phoneNumber').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value,
+            };
 
-        //     const serviceID = "service_46wqboh"; // Replace "YOUR_SERVICE_ID" with your actual service ID
-        //     const templateID = "template_x0cs7wl"; // Replace "YOUR_TEMPLATE_ID" with your actual template ID
+            const serviceID = "service_k0a6oqv"; // Replace "YOUR_SERVICE_ID" with your actual service ID
+            const templateID = "template_yge24ol"; // Replace "YOUR_TEMPLATE_ID" with your actual template ID
 
-        //     emailjs.send(serviceID, templateID, params)
-        //         .then(res => {
-        //             alert("Message sent successfully!");
-        //             document.getElementById('contactFormContact').reset();
-        //         })
-        //         .catch(err => {
-        //             console.error("Error:", err);
-        //             alert("An error occurred while sending the message.");
-        //         });
-        // }
+            emailjs.send(serviceID, templateID, params)
+                .then(res => {
+                    alert("Message sent successfully!");
+                    document.getElementById('contactFormContact').reset();
+                })
+                .catch(err => {
+                    console.error("Error:", err);
+                    alert("An error occurred while sending the message.");
+                });
+        }
 
         // Add event listener to the form
         const contactForm = document.getElementById('contactFormContact');

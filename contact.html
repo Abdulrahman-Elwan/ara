@@ -334,11 +334,11 @@
             } else {
                 document.getElementById('messageError').style.display = 'none';
             }
-
+            console.log("Validation Result:", isValid);
             return isValid;
         }
 
-        Function to send data using EmailJS
+        // Function to send data using EmailJS
         function sendMail() {
             // Initialize EmailJS
             emailjs.init("3gUIxBk1fE5bV8sNQ"); // Replace "YOUR_PUBLIC_KEY" with your actual EmailJS public key

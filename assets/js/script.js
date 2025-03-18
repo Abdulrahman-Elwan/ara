@@ -432,7 +432,7 @@ const processItems = [
     title: {
       en: "Pure & Safe Ingredients",
       ar: "مكونات نقية وآمنة"
-    }
+    },
     description: {
       en: "Advanced formulas free from harmful chemicals for a safer choice",
       ar: "تركيبات متقدمة خالية من المواد الضارة لخيار أكثر أمانًا"

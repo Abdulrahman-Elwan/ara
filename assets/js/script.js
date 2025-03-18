@@ -220,10 +220,15 @@ let translations = {
 
 let rtlLanguages = ['ar']; // قائمة اللغات التي تتطلب الاتجاه من اليمين إلى اليسار
 document.getElementById('languageSelector').addEventListener('change', (e) => {
-  let selectedLang = e.target.value;
-  localStorage.setItem('selectedLanguage', selectedLang);
-  applyTranslations(selectedLang);
-  applyFont(selectedLang);
+    let selectedLang = e.target.value;
+    localStorage.setItem('selectedLanguage', selectedLang);
+    
+    // تطبيق الترجمة على باقي الصفحة
+    applyTranslations(selectedLang);
+    applyFont(selectedLang);
+
+    // ✅ إعادة عرض المنتجات باللغة الجديدة فورًا
+    renderProducts();
 });
 
 function applyTranslations(language) {
